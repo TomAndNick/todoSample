@@ -1,0 +1,20 @@
+extends layout
+
+block styles
+	// Site stylesheet
+	link(rel='stylesheet', href='/app/styles/frontend.css')
+
+block content
+	.page
+		h1 Have you got something #{app}
+		h2 Or maybe you have nothing #{app2}
+
+		.buttons
+			a.button(href="/login")=t("Login")
+			if features.disableSignUp !== true
+				a.button(href="/signup")=t("Signup")
+
+block scripts
+	script(src='/app/vendor.js')
+	script(src='/app/frontend.js')
+
